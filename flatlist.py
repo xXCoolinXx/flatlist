@@ -33,3 +33,6 @@ with open('./flatpaks.txt', 'a') as f:
         if app not in apps_installed:
             print(f'Added {app} to flatpak list.')
             f.write(app + "\n")
+
+result = subprocess.run(['flatpak', 'update'])
+print(result.stdout)
